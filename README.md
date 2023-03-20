@@ -1,3 +1,21 @@
+# Docker Chatblade
+
+This is a docker setup that simplifies the setup of chatblade. Don't worry about installing pip and python dependencies, just `docker-compose up`. 
+
+Then add this to your .bash_aliases or .zshrc file.
+
+```
+function chatblade() {
+  docker-compose exec chatblade bash $1
+}
+```
+
+After that, everything below should work.
+
+
+Also - the real chatblade lives here:
+https://github.com/npiv/chatblade
+
 # Chatblade
 ## A CLI Swiss Army Knife for ChatGPT
 
