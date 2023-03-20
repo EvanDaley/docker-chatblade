@@ -6,14 +6,19 @@ Then add this to your .bash_aliases or .zshrc file.
 
 ```
 function chatblade() {
-  docker-compose exec chatblade bash $1
+  docker-compose exec chatblade /bin/bash
 }
 ```
 
-After that, everything below should work.
+Exec into the container with `chatblade`.
 
+Now things are initialized. After this point, everything below should work, after you set your api key (export it or create an env).
 
-Also - the real chatblade lives here:
+There is also a `f` helper inside the container, which will be synonymous with "chatblade". You can type "f hello" and it'll reply.
+
+Additionally, there is a /docker/.bash_aliases file that you can add any other aliases to. Just make sure you rebuild the container after.
+
+Also - the official chatblade lives here:
 https://github.com/npiv/chatblade
 
 # Chatblade

@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  chatblade:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    environment:
+      OPENAI_API_KEY: $OPENAI_API_KEY
+    volumes:
+      - .:/app
+      - ./docker/.bash_aliases:/root/.bash_aliases
+    restart: on-failure
+    tty: true
+    working_dir: /app
+    entrypoint: ["/bin/sh", "-c", "pip install . && tail -f /dev/null"]
